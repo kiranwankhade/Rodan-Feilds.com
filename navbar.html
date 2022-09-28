@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodan and Fields</title>
+    
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="navbar.css" />
+    <style>
+      #homeTop{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(1,1fr);
+        gap: 0px;
+      }
+
+      #homeimg{
+        width: 100%;
+        height: 100%;
+      }
+
+      #homeTop>:nth-child(2){
+        background-color: #D6D3E5;
+        padding: 30px;
+      }
+
+      h3{
+        font-size: 35px;
+        color: #222;
+        font-weight: 500;
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      h3+p{
+        width: 90%;
+        font-size: 25px;
+        color: #3b3b3b;
+        line-height: 35px;
+        margin-top: -25px;
+        font-weight: 200;
+      }
+
+      /* @media all and (min-width:1200px) and (max-width:1300px) {
+        #homeTop{
+          grid-template-columns: repeat(2,1fr);
+          grid-template-rows: repeat(1,1fr);
+        }
+
+        #homeTop>:nth-child(2){
+          height: 180px;
+        }
+
+        h3{
+          font-size: 30px;
+        }
+
+        h3+p{
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        
+      } */
+
+      @media all and (min-width:700px) and (max-width:1200px) {
+       
+        #homeTop{
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          grid-template-rows: repeat(1,180px);
+          gap: 0px;
+        }
+
+        #homeTop>:nth-child(2){
+          padding: 10px;
+        }
+
+        h3{
+          font-size: 20px;
+        }
+
+        h3+p{
+          font-size: 15px;
+          line-height: 25px;
+          margin-top: -20px;
+        }
+      }
+
+
+      @media all and (min-width:300px) and (max-width:700px) {
+       
+        #homeTop{
+          display: grid;
+          width: 100%;
+          grid-template-columns: repeat(1,1fr);
+          grid-template-rows: repeat(2,180px);
+          gap: 0px;
+        }
+
+        #homeTop>:nth-child(2){
+          padding: 10px;
+        }
+
+        h3{
+          font-size: 20px;
+        }
+
+        h3+p{
+          font-size: 15px;
+          line-height: 25px;
+          margin-top: -20px;
+        }
+     }
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+      <div id="navbar1">
+        <p>FIND A CONSULTANT</p>
+        <div>
+          <a href="navbar.html">
+            <img id="logo" src="https://www.rodanandfields.com/en-us/medias/rf-logo.svg?context=bWFzdGVyfGltYWdlc3w3MzczfGltYWdlL3N2Zyt4bWx8aW1hZ2VzL2g2MC9oYWIvODgyMjE0NzE4NjcxOC5zdmd8YjNmMmU2YTg5MTM0NTMzM2Y2ODg2ZmRkZTJhNmY2OWZhYmYyYjk5NWQxODkxODFiYjVkY2MxY2NjOWRlMzA5OA" alt="navbar imgae">
+          </a>
+        </div>
+        <div>
+          <p>Search <i class="fa-sharp fa-solid fa-magnifying-glass"></i></p>
+          <p>Sign in <i class="fa-regular fa-user"></i></p>
+          <p><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></p>
+          <img id="falg" src="https://pngimg.com/uploads/flags/flags_PNG14592.png"> <span id="english">English</span>
+        </div>
+      </div>
+      <hr>
+      <div id="navbar2">
+        <div  id="shop"><a href=#>SHOP</a>
+          <div>
+            
+          </div>
+          <div class="shopmenu" id="shopList">
+            <div>
+              <p>SHOP BY CATEGORY</p>
+              <br>
+              <p>Skincare Regimens</p>
+              <p>Lash and Brow</p>
+              <p>EyeCream And Treatments</p>
+              <p>Face serums and Treatments</p>
+              <p>Face mask</p>
+              <p>Moisturizers</p>
+              <p>Cleansers & Makeup Removers</p>
+              <p>Toners</p>
+              <p>Sun Protection</p>
+              <p>Tools & Accessories</p>
+              <p>Hand & body</p>
+            </div>
+            <div>
+              <p>SHOP BY CONCERN</p>
+              <br>
+              <p>Anti-Aging</p>
+              <p>Acne, Pores & Blackheads</p>
+              <p>Dark Spots & Uneven Skin Tone</p>
+              <p>Sensitivity & Visible Redness</p>
+              <p>Dull & Tired Skin</p>
+              <p>Dry Skin</p>
+              <p>Teen Acne</p>
+            </div>
+            <div>
+              <p>SHOP BY PRODUCT LINE</p>
+              <br>
+              <p>Redefine</p>
+              <p>Reverse</p>
+              <p>Unblemish</p>
+              <p>Soothe</p>
+              <p>Spotless</p>
+              <p>Enhancements</p>
+              <p>Pro Skincare Tools</p>
+              <p>Essentials</p>
+              <p>All Products</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div> -->
+          <a href="bestSeller.html">BEST SELLERS</a>
+        <!-- </div> -->
+        <div  id="feature"><a href=#>FEATURED</a>
+          <div class="shopmenu" id="featureList">
+            <div>
+              <p>Special Offers</p>
+              <p>Before and Afters</p>
+              <p>New Total RF Serum</p>
+              <p>Spotless for Teens</p>
+              <p>Self-Care Essentials</p>
+            </div>
+          </div>
+        </div>
+        <div  id="story"><a href=#>OUR STORY</a>
+          <div class="shopmenu" id="storyList">
+            <div>
+              <p>R+F Difference</p>
+              <p>Personalized Service</p>
+              <p>Explore Our Regimens</p>
+              <p>Our Founders</p>
+              <p>Our Impact</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div> -->
+          <a>PERK PROGRAM</a>
+        <!-- </div> -->
+        <!-- <div> -->
+          <a>BECOME A CONSULTANT</a>
+        <!-- </div> -->
+        <!-- <div> -->
+          <a>VLOG</a>
+        <!-- </div> -->
+      </div>
+    </div>
+    
+
+    <div id="homeTop">
+        <div>
+          <img id="homeimg" src="https://www.rodanandfields.com/en-us/medias/concern-acne-pores-blackheads-category-page-global.jpg?context=bWFzdGVyfHJvb3R8MTQ0MDc5fGltYWdlL2pwZWd8aDNhL2hkMi8xNDkzMDM3MDY1ODMzNC5qcGd8MTI4YzNjODVhYTVkYzc5MjRkNDFjZTNiYjdiODkyYmJjZTUwOTUzZDE4ZDI2OGQ0ZjU3Y2M0ZjAyMGQxZmRlOA" alt="">
+        </div>
+        <div>
+          <h3>Acne Treatments & Blackhead Removal</h3>
+          <p>Shop our bestselling acne products designed to address every acne skin issue, from blackhead removal to pores to pimples.</p>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+</script>
