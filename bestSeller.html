@@ -169,6 +169,8 @@
       }
     }
 
+    
+
 </style>
 <body>
     <div id="navbar">
@@ -182,7 +184,7 @@
           <div>
             <p>Search <i class="fa-sharp fa-solid fa-magnifying-glass"></i></p>
             <p>Sign in <i class="fa-regular fa-user"></i></p>
-            <p><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></p>
+            <p><i class="fa-solid fa-bag-shopping"></i><span id="nav-count"></span></p>
             <img id="falg" src="https://pngimg.com/uploads/flags/flags_PNG14592.png"> <span id="english">English</span>
           </div>
         </div>
@@ -274,6 +276,20 @@
         <p>Shop our fan favorites. We’ve got a full range of skincare products including cleansers, creams, serums + more. All created with dermatology-  inspired formulas to address your skin concerns. Experience the transformative results + get the best skin of your life.</p>
     </div>
     <div id="bestSellerContainer"></div>
+
+    <div id="mySidebar" class="sidebar" >
+      <div id="titleCart">
+        <a><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></a>
+        <p>Your Bag</p>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      </div>
+      <hr>
+      <div id="sideDiv">
+        <div id="sideContainer">
+        </div>
+      </div>
+    </div>  
+    
 </body>
 </html>
 <script>
@@ -455,7 +471,6 @@ var productData = [
     }
 ]
 
-let cartArr =  localStorage.setItem("bestSeller-data",JSON.stringify(productData))||[];
 
 productData.forEach(function(el){
     let card = document.createElement("div");
@@ -487,11 +502,14 @@ productData.forEach(function(el){
 
     let btn = document.createElement("button");
     btn.innerText = "ADD TO BAG";
+
     btn.addEventListener("mouseover",function(){
       btn.style.cursor = "pointer"
     })
+    
     btn.addEventListener("click",function(){
-        addToBag(el)
+        addToBag(el);
+        document.getElementById("mySidebar").style.width = "350px";
     })
 
     card.append(img,best,prodName,desc,price,stars,rating,views,p,btn)
@@ -502,10 +520,72 @@ productData.forEach(function(el){
 });
 
 
+let cartArr = [] || JSON.parse(localStorage.getItem("bestSeller-data"));
+console.log("cartArr",cartArr)
+
 function addToBag(el){
+  console.log("el",el)
   cartArr.push(el);
-  localStorage.setItem("bestSellCart",JSON.stringify(cartArr))
+  console.log("cartArr",cartArr)
   alert("Added")
+  localStorage.setItem("bestSellCart",JSON.stringify(cartArr))
+}
+
+
+let cartData = JSON.parse(localStorage.getItem("bestSellCart"))||[];
+console.log("cart",cartData);
+cartDisplay(cartData);
+
+let bag = document.querySelector("#cart-count")
+bag.innerText = cartData.length;
+bag.addEventListener("click",function(){
+  document.getElementById("mySidebar").style.width = "350px";
+})
+
+let nav = document.querySelector("#nav-count")
+nav.innerText = cartData.length;
+nav.addEventListener("click",function(){
+  document.getElementById("mySidebar").style.width = "350px";
+})
+
+
+function cartDisplay(cartData){
+  cartData.forEach(function(el){
+        document.querySelector("#sideContainer").innerHTML = ""
+        let count = 1;
+        let card1 = document.createElement("div")
+
+        let img = document.createElement("img")
+        img.src = el.img;
+
+        let card2 = document.createElement("div");
+
+        let prodName = document.createElement("p");
+        prodName.innerText = el.name;
+
+        let card3 = document.createElement("div")
+
+        let quantity = document.createElement("p");
+        if(cartArr.name === el.name){
+        quantity.innerText = "Qty:"+""+(count++)
+        }
+
+        let price = document.createElement("p");
+        price.innerText = el.price;
+
+        card3.append(quantity,price);
+        card2.append(prodName,card3);
+        card1.append(img,card2);
+        
+        document.querySelector("#sideContainer").append(card1);
+        localStorage.setItem("bestSellCart",JSON.stringify(cartData))
+        document.querySelector("#mySidebar").append(document.createElement("hr"));
+    })
+}
+
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
 }
 
 </script>

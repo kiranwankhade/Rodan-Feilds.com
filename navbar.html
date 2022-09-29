@@ -128,13 +128,13 @@
         <div>
           <p>Search <i class="fa-sharp fa-solid fa-magnifying-glass"></i></p>
           <p>Sign in <i class="fa-regular fa-user"></i></p>
-          <p><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></p>
+          <p><i class="fa-solid fa-bag-shopping"></i><span id="nav-count"></span></p>
           <img id="falg" src="https://pngimg.com/uploads/flags/flags_PNG14592.png"> <span id="english">English</span>
         </div>
       </div>
       <hr>
       <div id="navbar2">
-        <div  id="shop"><a href=#>SHOP</a>
+        <div id="shop"><a href=#>SHOP</a>
           <div>
             
           </div>
@@ -227,8 +227,70 @@
           <p>Shop our bestselling acne products designed to address every acne skin issue, from blackhead removal to pores to pimples.</p>
         </div>
     </div>
+
+    <div id="mySidebar" class="sidebar" >
+      <div id="titleCart">
+        <a><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></a>
+        <p>Your Bag</p>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      </div>
+      <hr>
+      <div id="sideDiv">
+        <div id="sideContainer">
+        </div>
+      </div>
+    </div>  
     
 </body>
 </html>
 <script>
+  let cartData = JSON.parse(localStorage.getItem("bestSellCart"))||[];
+  console.log("cart",cartData);
+  cartDisplay(cartData)
+
+  let bag = document.querySelector("#nav-count")
+  bag.innerText = cartData.length;
+  bag.addEventListener("click",function(){
+    document.getElementById("mySidebar").style.width = "350px";
+  })
+
+
+  function cartDisplay(cartData){
+  cartData.forEach(function(el){
+        document.querySelector("#sideContainer").innerHTML = ""
+        let count = 1;
+        let card1 = document.createElement("div")
+
+        let img = document.createElement("img")
+        img.src = el.img;
+
+        let card2 = document.createElement("div");
+
+        let prodName = document.createElement("p");
+        prodName.innerText = el.name;
+
+        let card3 = document.createElement("div")
+
+        let quantity = document.createElement("p");
+        if(el.name === el.name){
+        quantity.innerText = "Qty:"+""+(count++)
+        }
+
+        let price = document.createElement("p");
+        price.innerText = el.price;
+
+        card3.append(quantity,price);
+        card2.append(prodName,card3);
+        card1.append(img,card2);
+        
+        document.querySelector("#sideContainer").append(card1);
+        localStorage.setItem("bestSellCart",JSON.stringify(cartData))
+        document.querySelector("#mySidebar").append(document.createElement("hr"));
+    })
+}
+
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
 </script>

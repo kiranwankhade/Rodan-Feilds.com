@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartBestSeller</title>
+</head>
+<body>
+    <div id="titleCart">
+    <a><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></a>
+    <p>Your Bag</p>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    </div>
+    <hr>
+    <div id="sideDiv">
+    <div id="sideContainer">
+
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    let cartData = JSON.parse(localStorage.getItem("bestSellCart"))||[];
+    console.log("cart",cartData);;
+
+    cartData.forEach(function(el){
+        let count = 1;
+        let card1 = document.createElement("div")
+
+        let img = document.createElement("img")
+        img.src = el.img;
+
+        let card2 = document.createElement("div");
+
+        let prodName = document.createElement("p");
+        prodName.innerText = el.name;
+
+        let card3 = document.createElement("div")
+
+        let quantity = document.createElement("p");
+        if(el.name === el.name){
+        quantity.innerText = "Qty:"+""+(count++)
+        }
+
+        let price = document.createElement("p");
+        price.innerText = el.price;
+
+        card3.append(quantity,price);
+        card2.append(name,card3);
+        card1.append(img,card2);
+
+        document.querySelector("#sideContainer").append(card1);
+        
+        // cartArr.push(el);
+        // localStorage.setItem("bestSellCart",JSON.stringify(cartData))
+    })
+</script>
