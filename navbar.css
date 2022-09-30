@@ -49,12 +49,13 @@ body{
   }
 
   #navbar2{
-    margin-top: 20px;
+    margin-top: 26px;
     display: flex;
     justify-content: center;
     gap: 50px;
     font-size: 12px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
 
@@ -153,7 +154,6 @@ body{
       justify-content:space-around;
       gap: 20px;
       font-size: 14px;
-      margin-bottom: 20px;
     }
 
   }
@@ -191,6 +191,7 @@ body{
       gap: 10px;
       font-size: 10px;
       margin-bottom: 20px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
   }
 
@@ -247,7 +248,7 @@ body{
 
 #titleCart{
   margin-top: -62px;
-  gap: 70px;
+  gap: 100px;
 }
 
 #sideDiv{
@@ -314,18 +315,17 @@ body{
   flex-direction: column;
   position: fixed;
   bottom: 10px;
-  text-align: center;
+  width: 350px;
 }
 
 #bottomSideDiv>div{
   display: flex;
   justify-content: space-between;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 #bottomSideDiv>p{
     font-size: 12px;
-    width: 120%;
     margin: auto;
     color: #818181;
 }
@@ -335,12 +335,14 @@ body{
 }
 
 #bottomSideDiv>button{
-  padding: 15px;
+  padding: 10px;
+  margin: auto;
   border-radius: 10px;
   border: none;
   color: #FFFFFF;
   background-color: #222222;
-  width: 120%;
+  width: 100%;
+  
 }
 
 hr {
