@@ -93,6 +93,7 @@ body{
     font-size: 13px;
     border: none;
     text-decoration: none;
+    position: absolute;
   } 
 
 
@@ -196,9 +197,9 @@ body{
 
 
   /* sidebar */
-  #mySidebar{
-    display: flex;
-    flex-direction: column;
+#mySidebar {
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar{
@@ -212,7 +213,6 @@ body{
   transition: 0.5s;
   padding-top: 60px;
   background-color: white;
-  
 }
 
 .sidebar>div>a {
@@ -221,6 +221,10 @@ body{
   font-size: 25px;
   color: #818181;
   transition: 0.3s;
+}
+
+.sidebar>div>a>i,span{
+  font-size: 15px;
 }
 
 .sidebar>div>a:hover {
@@ -237,39 +241,114 @@ body{
 .sidebar>div{
   display: flex;
   /* justify-content:space-around; */
-  gap: 70px;
+ 
   margin-top: -20px;
 }
 
+#titleCart{
+  margin-top: -62px;
+  gap: 70px;
+}
+
 #sideDiv{
-  height: 60%;
-  border: 1px solid blue;
+  /* height: 60%; */
+  border: 0px solid blue;
   width: 100%;
 }
+
+#body__overlay { 
+    /* z-index: 999; */
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(96,96,96,0.7);
+    position: fixed;
+    margin-top: -10px;
+    display: none; 
+}
+
+
 
 #sideDiv>#sideContainer{
     display: grid;
     grid-template-columns: repeat(1,auto); 
-    grid-template-rows: repeat(auto,auto); 
-    border: 1px solid red;
-    overflow: scroll;
+    grid-template-rows: repeat(3,auto); 
+    gap: 0px;
+    border: 0px solid red;
+    /* overflow: scroll; */
+    overflow: hidden;
+    width: 100%;
 }
 
 #sideDiv>#sideContainer>div{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: start;
+  gap: 0px;
+  margin-top: 9px;
 }
 
 #sideDiv>#sideContainer>div>img{
   height: 100px;
-  width: 130px;
+  width: 120px;
+  margin: 0px;
 }
 
 #sideDiv>#sideContainer>div+div{
   display: flex;
+  gap: 0px;
 }
 
 #sideDiv>#sideContainer>div>div>div{
   display: flex;
   justify-content: space-between;
+  gap: 0px;
 }
+
+#sideDiv>#sideContainer>div>div>div>:nth-child(1) {
+  color: #818181;
+}
+
+
+#bottomSideDiv{
+  flex-direction: column;
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+}
+
+#bottomSideDiv>div{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+#bottomSideDiv>p{
+    font-size: 12px;
+    width: 120%;
+    margin: auto;
+    color: #818181;
+}
+
+#bottomSideDiv>div>p{
+  font-size: 16px;
+}
+
+#bottomSideDiv>button{
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  background-color: #222222;
+  width: 120%;
+}
+
+hr {
+  /* border: 0; */
+  clear:both;
+  display:block;
+  width: 100%;
+  /* height: 1px; */
+  color: #919397;
+}
+
