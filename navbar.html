@@ -128,13 +128,13 @@
         <div>
           <p>Search <i class="fa-sharp fa-solid fa-magnifying-glass"></i></p>
           <p>Sign in <i class="fa-regular fa-user"></i></p>
-          <p><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></p>
+          <p id="navBag"><i class="fa-solid fa-bag-shopping"></i><span id="nav-count"></span></p>
           <img id="falg" src="https://pngimg.com/uploads/flags/flags_PNG14592.png"> <span id="english">English</span>
         </div>
       </div>
       <hr>
       <div id="navbar2">
-        <div  id="shop"><a href=#>SHOP</a>
+        <div id="shop"><a href=#>SHOP</a>
           <div>
             
           </div>
@@ -206,7 +206,7 @@
           </div>
         </div>
         <!-- <div> -->
-          <a>PERK PROGRAM</a>
+          <a id="perk" href="perks.html">PERK PROGRAM</a>
         <!-- </div> -->
         <!-- <div> -->
           <a>BECOME A CONSULTANT</a>
@@ -227,8 +227,30 @@
           <p>Shop our bestselling acne products designed to address every acne skin issue, from blackhead removal to pores to pimples.</p>
         </div>
     </div>
+
+    <div id="mySidebar" class="sidebar" >
+      <div id="titleCart">
+        <a id="cartBag"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></a>
+        <p>Your Bag</p>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      </div>
+      <hr>
+      <div id="sideDiv">
+        <div id="sideContainer">
+        </div>
+      </div>
+
+      <div id="bottomSideDiv">
+        <p>Savings, shipping costs and tax calculated at checkout</p>
+        <div>
+          <p>SUBTOTAL:</p>
+          <p id="totalPrice">PRICE</p>
+        </div>
+        <button>REVIEW BAG & CHECKOUT</button>
+      </div>
+    </div>  
     
 </body>
 </html>
-<script>
-</script>
+
+<script src="./cart.js"></script>

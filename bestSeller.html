@@ -73,11 +73,11 @@
 
     #bestSellerContainer>div>button{
         width: 100%;
-        padding: 8px;
+        padding: 10px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         background-color: white;
         border: 1px solid black;
-        border-radius: 9px;
+        border-radius: 5px;
     }
 
     #bestSellerContainer>div>img+p{
@@ -105,6 +105,9 @@
        padding-right: 5px;
     }
     
+    #bestSellerContainer>div>:nth-child(8){
+      color: #7C7F88;
+    }
     #bestSellerContainer>div>:nth-child(9){
         margin-bottom: 80px;
     }
@@ -169,8 +172,12 @@
       }
     }
 
+    
+
+
 </style>
 <body>
+    <div id="body__overlay"></div>
     <div id="navbar">
         <div id="navbar1">
           <p>FIND A CONSULTANT</p>
@@ -182,7 +189,7 @@
           <div>
             <p>Search <i class="fa-sharp fa-solid fa-magnifying-glass"></i></p>
             <p>Sign in <i class="fa-regular fa-user"></i></p>
-            <p><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></p>
+            <p id="navBag"><i class="fa-solid fa-bag-shopping"></i><span id="nav-count"></span></p>
             <img id="falg" src="https://pngimg.com/uploads/flags/flags_PNG14592.png"> <span id="english">English</span>
           </div>
         </div>
@@ -257,7 +264,7 @@
             </div>
           </div>
           <!-- <div> -->
-            <a>PERK PROGRAM</a>
+            <a id="perk" href="perks.html">PERK PROGRAM</a>
           <!-- </div> -->
           <!-- <div> -->
             <a>BECOME A CONSULTANT</a>
@@ -274,8 +281,32 @@
         <p>Shop our fan favorites. We’ve got a full range of skincare products including cleansers, creams, serums + more. All created with dermatology-  inspired formulas to address your skin concerns. Experience the transformative results + get the best skin of your life.</p>
     </div>
     <div id="bestSellerContainer"></div>
+
+    <div id="mySidebar" class="sidebar" >
+      <div id="titleCart">
+        <a id="cartBag"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count"></span></a>
+        <p>Your Bag</p>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      </div>
+      <hr>
+      <div id="sideDiv">
+        <div id="sideContainer">
+        </div>
+      </div>
+
+      <div id="bottomSideDiv">
+        <p>Savings, shipping costs and tax calculated at checkout</p>
+        <div>
+          <p>SUBTOTAL:</p>
+          <p id="totalPrice">PRICE</p>
+        </div>
+        <button>REVIEW BAG & CHECKOUT</button>
+      </div>
+    </div>  
+    
 </body>
 </html>
+<script src="./cart.js"></script>
 <script>
 
 var productData = [
@@ -285,7 +316,7 @@ var productData = [
         sell:"Best seller",
         name:"R + F Lash Boost",
         desc:"Applied nightly to promote the appearance of longer, stronger and darker-looking lashes.",
-        price:"$156",
+        price:156,
         stars:"★★★★★",
         rating:4.6,
         views:"(8385)",
@@ -297,7 +328,7 @@ var productData = [
         sell:"Best seller",
         name:"Total RF Serum",
         desc:"Our most comprehensive anti-aging serum to revitalize and address all key signs of aging.",
-        price:"$175",
+        price:175,
         stars:"★★★★★",
         rating:4.5,
         views:"(3541)",
@@ -309,7 +340,7 @@ var productData = [
         sell:"New Arrival",
         name:"R+F Instant Targeted Firming Gel™",
         desc:"Multi-targeted skincare treatment that instantly and visibly firms, tightens + smooths.",
-        price:"$105",
+        price:105,
         stars:"",
         rating:"",
         views:"" ,
@@ -321,7 +352,7 @@ var productData = [
         sell:"Best seller",
         name:"REDEFINE Regimen",
         desc:"Visibly lifts, sculpts + firms while minimizing the appearance of lines + deep wrinkles. ",
-        price:"$220 ($275 Value)",
+        price:220,
         stars:"★★★★★",
         rating:4.7,
         views:"(7667)",
@@ -332,7 +363,7 @@ var productData = [
         sell:"Best seller",
         name:"REDEFINE Multi-Function Eye Cream",
         desc:"Visibly firms + lifts to improve the look of fine lines, wrinkles, sagging + crow’s feet. ",
-        price:"$70",
+        price:70,
         stars:"★★★★★",
         rating:4.6,
         views:"(9946)",
@@ -344,7 +375,7 @@ var productData = [
         sell:"Best seller",
         name:"R + F Active Hydration Serum",
         desc:"Instantly boosts hydration levels by 200% and locks in moisture on skin's surface.",
-        price:"$112",
+        price:112,
         stars:"★★★★★",
         rating:4.8,
         views:"(9149)",
@@ -357,7 +388,7 @@ var productData = [
         sell:"Best seller",
         name:"Active Hydration Bright Eye Complex",
         desc:"Reduces visible dark circles and under-eye puffiness over time for younger-looking eyes.",
-        price:"$72",
+        price:72,
         stars:"★★★★★",
         rating:4.5,
         views:"(6321)",
@@ -370,7 +401,7 @@ var productData = [
         sell:"Best seller",
         name:"Rodan + Fields Active Hydration Body Replenish",
         desc:"Instantly and continuously hydrates the body for younger-looking, younger-acting skin. ",
-        price:"$66",
+        price:66,
         stars:"★★★★★",
         rating:4.9,
         views:"(7344)",
@@ -384,7 +415,7 @@ var productData = [
         sell:"Best seller",
         name:"Rodan + Fields Enhancements Micro-Dermabrasion Paste",
         desc:"Exfoliates away dead skin cells for smoother, vibrant-looking skin after just one use.",
-        price:"$83",
+        price:83,
         stars:"★★★★★",
         rating:4.8,
         views:"(4561)",
@@ -397,7 +428,7 @@ var productData = [
         sell:"Best seller",
         name:"REVERSE Regimen",
         desc:"Brightens + refines skin’s surface while tackling the look of fine lines + dark spots. ",
-        price:"$195 ($245 Value)",
+        price:195,
         stars:"★★★★☆",
         rating:4,
         views:"(9946)",
@@ -410,7 +441,7 @@ var productData = [
         sell:"Best seller",
         name:"UNBLEMISH Regimen",
         desc:"Helps clear and prevent adult acne while visibly minimizing pores + fine lines.",
-        price:"$90 ($240 Value)",
+        price:90,
         stars:"★★★★★",
         rating:4.4,
         views:"(525)"
@@ -423,7 +454,7 @@ var productData = [
         sell:"Best seller",
         name:"SOOTHE Regimen",
         desc:"Protects sensitive skin, reduces visible redness + fortifies skin’s moisture barrier. ",
-        price:"$185 ($235 Value)",
+        price:185,
         stars:"★★★★★",
         rating:4.3,
         views:"(796)"
@@ -436,7 +467,7 @@ var productData = [
         //sell:"Best seller",
         name:"RECHARGE Regimen",
         desc:"Defends against lifestyle stressors that leave skin looking dull, blotchy + dehydrated. ",
-        price:"$134",
+        price:134,
         stars:"★★★★★",
         rating:4.6,
         views:"(755)"
@@ -448,14 +479,13 @@ var productData = [
         sell:"Award Winner",
         name:"SPOTLESS Regimen",
         desc:"For teens + young adults: Clears existing blemishes + prevents new ones from forming.",
-        price:"$89",
+        price:89,
         stars:"★★★★★",
         rating:4.6,
         views:"(1625)",
     }
 ]
 
-let cartArr =  localStorage.setItem("bestSeller-data",JSON.stringify(productData))||[];
 
 productData.forEach(function(el){
     let card = document.createElement("div");
@@ -473,7 +503,7 @@ productData.forEach(function(el){
     desc.innerText = el.desc;
 
     let price = document.createElement("p");
-    price.innerText = el.price;
+    price.innerText = "$"+""+el.price;
 
     let stars = document.createElement("label");
     stars.innerText = el.stars;
@@ -487,11 +517,16 @@ productData.forEach(function(el){
 
     let btn = document.createElement("button");
     btn.innerText = "ADD TO BAG";
+
     btn.addEventListener("mouseover",function(){
       btn.style.cursor = "pointer"
     })
-    btn.addEventListener("click",function(){
-        addToBag(el)
+    
+    btn.addEventListener("click",function(e){
+        addToBag(el);
+        e.stopPropagation();
+        document.getElementById("mySidebar").style.width = "350px";
+        disBackground.style.display = "block";
     })
 
     card.append(img,best,prodName,desc,price,stars,rating,views,p,btn)
@@ -502,10 +537,20 @@ productData.forEach(function(el){
 });
 
 
+let cartArr = [] || JSON.parse(localStorage.getItem("bestSeller-data"));
+// console.log("cartArr",cartArr)
+
 function addToBag(el){
+  // console.log("el",el)
   cartArr.push(el);
-  localStorage.setItem("bestSellCart",JSON.stringify(cartArr))
+  // console.log("cartArr",cartArr)
   alert("Added")
+  localStorage.setItem("bestSellCart",JSON.stringify(cartArr))
 }
+
+
+// let cartData = JSON.parse(localStorage.getItem("bestSellCart")) || [];
+console.log("cart",cartData);
+// cartDisplay(cartData);
 
 </script>
