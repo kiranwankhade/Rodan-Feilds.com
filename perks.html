@@ -169,6 +169,166 @@
             line-height: 0px;
         }
 
+        #FAQ{
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            
+        }
+
+
+        .faq-que {
+            color: #222222;
+            cursor: pointer;
+            margin: auto;
+            font-weight: 100;
+            font-size: 14px;
+        }
+
+        /* .faq-ans{
+            margin: auto;
+            padding: auto;
+        } */
+
+       
+        /* .active,
+        .faq-que:hover {
+            background-color: #F9F9F9;
+            font-weight: 600;
+        } */
+
+        .active,
+        .faq-que:after {
+            background-color: #F9F9F9;
+            font-weight: 600;
+        }
+
+        
+
+    
+        .faq-ans {
+            display: none;
+            overflow: hidden;
+            font-size: 14px;
+        }
+
+        .faq-que:after {
+            content: '+';
+            font-size: 20px;
+            font-weight: 100;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after{
+            content: '\2014';
+            font-size: 20px;
+            font-weight: 100;
+            float: right;
+            margin-left: 5px;
+        }
+
+        /* .faq-que .expanded *{
+            font-weight: bold;
+        } */
+
+        #pageBottom{
+            margin-top: 70px;
+        }
+
+        #footer{
+            display: flex;
+            flex-direction: row;
+            /* gap: 10px; */
+            justify-content: space-between;
+            margin: auto;
+            width: 100%;
+        }
+
+        #footerDiv1{
+            /* width: 50%; */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 150px;
+            margin-left: 20px;
+            line-height: 20px;
+        }
+
+        #footerDiv2{
+            margin-right: 200px;
+            font-family: 'Times New Roman', Times, serif;
+            
+            color: #222222;
+            
+        }
+
+        #footerDiv2>h2{
+            font-size: 20px;
+            font-weight: 100;
+        }
+
+        #imgages>i{
+            font-size: 20px;
+            margin-right: 40px;
+            margin-top: 20px
+        }
+
+        
+        .content .Div3{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            
+        }
+
+        .Div3{
+           padding: 10px;
+           margin: 10px;
+        }
+
+        .lastDropdown{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            width: 70%;
+            font-size: 11px;
+            
+            color: #606060;
+        }
+
+        .lastDropdown>p:after{
+            content: '|';
+            position: relative;
+            right: -4px;
+        }
+
+        #content:after{
+            content: none;
+        }
+
+        .lastDiv{
+            display: none;
+        }
+
+        .DivTitle{
+            color: #606060;
+            font-size: 12px;
+            font-weight:800;
+        }
+
+        .DivDropdown{
+            color: #606060;
+            font-size: 12px;
+            font-weight:600;
+        }
+
+        hr{
+            border: 1;
+            margin-bottom: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -353,7 +513,110 @@
             <p>If you’re an R+F Customer and want to upgrade to PC Perks, simply enroll in your cart at checkout on your next order.</p>
             <a id="condition" href="https://www.rodanandfields.com/en-us/uploads/pdf/pc-perks-terms-conditions-us.pdf" target="_blank"><p> Perks Terms & Conditions</p></a>
         </div>
+        <div id="FAQ">
+            <hr class="hr-line">
+            <div id="1stQue">
+                <h3 class="faq-que">WHAT IS A PC?</h3>
+                <div class="faq-ans">
+                    <p >“PC” stands for Preferred Customer. When you join the Rodan + Fields PC Perks program, you become a PC, or a Preferred Customer. </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div id="2ndQue">
+                <h3 class="faq-que">WHAT IS THE PC PERKS PROGRAM?</h3>
+                <div class="faq-ans">
+                    <p >PC Perks is a subscription program that offers a 10% discount on all orders, free shipping on orders of $80 or more (after applying the 10% PC discount), a Perks Present, and deliveries every one or two months with the flexibility to change future products and shipment dates in your account settings. PC Perks members also gain access to exclusive offers, promotions, a priority Customer Service line and receive a 60-day Satisfaction Guarantee on all products. You can join PC Perks for a one-time fee of $19.95 with a minimum subscription order of $80 or more. The subscription you elect, 30 or 60 days will automatically renew at the respective renewal date. You may update your frequency, reschedule your date or cancel your account anytime prior to the renewal date by logging in and clicking manage subscription. From here you can select frequency, reschedule or cancel account</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div id="3rdQue">
+                <h3 class="faq-que">HOW DO I ENROLL IN THE PC PERKS PROGRAM?</h3>
+                <div class="faq-ans">
+                    <p >You may enroll in PC Perks through a Consultant’s Personal Website or through the R+F website at the time of checkout for a one-time, non-refundable $19.95 enrollment fee. Your initial subscription order must total a minimum of $80, after the 10% PC Perks discount is applied, and you’ll be asked to provide the required enrollment information, including a valid credit card. </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div id="4thQue">
+                <h3 class="faq-que">HOW DO I UPGRADE TO A PC PERKS ACCOUNT?</h3>
+                <div class="faq-ans">
+                    <p >If you are an existing Customer and would like to upgrade to Preferred Customer status, simply enroll in your cart at checkout on your next order.</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div id="5thQue">
+                <h3 class="faq-que">HOW DOES FREE SHIPPING WORK IN THE PC PERKS PROGRAM?</h3>
+                <div class="faq-ans">
+                    <p >For Preferred Customers, shipping is free on all orders of $80 or more, after the 10% PC Perks discount is applied. When you log in to the R+F website or your Consultant’s Personal Website, you will identify yourself as a PC by entering your email address and the password that you selected when enrolling in PC Perks. Then you can view and access the PC pricing and receive free shipping on all orders of $80 or more, whether it is a subscription order or a one-time order. </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div id="6thQue">
+                <h3 class="faq-que"> WHAT IF I HAVE ADDITIONAL QUESTIONS ABOUT THE PC PERKS PROGRAM?</h3>
+                <div class="faq-ans">
+                    <p >If you have additional questions, feel free to reach out to us at  <a href="pcperks@rodanandfields.com" target="_blank"><p>pcperks@rodanandfields.com</p></a>or by phone (877) 737-5773 Monday - Friday 5:30 a.m. - 6:00 p.m. PT or Saturday and Sunday 8:00 a.m. – 5:00 p.m. PT.</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+        </div>
     </div>
+
+   
+    <div id="pageBottom">
+        <hr>
+        <div id="footer">
+            <div id="footerDiv1">
+                <div class="Div1">
+                    <div class="DivTitle">ABOUT R+F</div>
+                    <div class="DivDropdown">
+                        <p>Press Room</p>
+                        <p>Company Info</p>
+                        <p>Executive Team</p>
+                        <p>Careers</p>
+                        <p>R+F Recycling Program</p>
+                        <p>Blog</p>
+                    </div>
+                </div>
+                <div class="Div2">
+                    <div class="DivTitle">HELP</div>
+                    <div class="DivDropdown">
+                        <p>Product & Help Center</p>
+                        <p>Shipping</p>
+                        <p>Satisfaction Guarantee</p>
+                        <p>Promotional Terms & Conditions</p>
+                        <p>R+F FAQS</p>
+                        <p>Klarna</p>
+                        <p>Site Map</p>
+                    </div>
+                </div>
+            </div>
+            <div id="footerDiv2">
+                <h2>Let’s Get Social</h2>
+                <div id="imgages"> 
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Div3">
+            
+            <div class="DivTitle lastDiv">DISCLAIMERS</div>
+            <div class="lastDropdown">
+                <p id="content">@2022 Rodan & Fields</p>
+                <p>Privacy Policy</p>
+                <p>Terms & Conditions</p>
+                <p>Accessibility</p>
+                <p>California Supply Chains Act</p>
+                <p>DSA Code Of Ethics</p>
+                <p>Disclaimer</p>
+                <p>Preference Center</p>
+            </div>
+        </div>
+    </div>
+    
     
 </body>
 </html>
@@ -410,4 +673,35 @@
         // localstorage
         localStorage.setItem("perkData",JSON.stringify(perMiddleData));
     });
+
+
+    let faq = document.getElementsByClassName("faq-que");
+    let i;
+
+    for (i = 0; i < faq.length; i++) {
+        faq[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            let body = this.nextElementSibling;
+            // let prev = this.previousElementSibling;
+            // console.log("prev",prev)
+            // console.log("body",body);
+            // if(prev.style.display == "none"){
+            //     prev.style.display = "block";
+            // }
+            if (body.style.display === "block") {
+                body.style.display = "none";
+            } else {
+                body.style.display = "block";
+            }
+        });
+    }
+
+    // function hideOthers() {
+    // var othersDivEle = document.getElementsByClassName("active");
+    // for(var d = 0; d < othersDivEle.length; d++) {
+    //     h2.nextElementSibling.hide();
+    // }
+    // }
+    
 </script>
