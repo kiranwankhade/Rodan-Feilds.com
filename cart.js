@@ -14,10 +14,16 @@ bag2.addEventListener("click",function(e){
     e.stopPropagation();
     document.getElementById("mySidebar").style.width = "350px";
     disBackground.style.display = "block";
+    window.location.reload();
 })
 
 let nav = document.querySelector("#nav-count")
-nav.innerText = cartData.length;
+if(cartData.length == 0){
+    nav.innerText = "";
+}else{
+    nav.innerText = cartData.length;
+}
+
 let navP = document.querySelector("#navBag");
 navP.addEventListener("mouseover",function(){
 navP.style.cursor = "pointer";
@@ -52,8 +58,10 @@ function cartDisplay(cartData){
 
         let quantity = document.createElement("p");
         if(el.name === cartData[index].name){
-            count = count+1;
-           quantity.innerText = "Qty:"+""+(count);
+            // count = count+1;
+           quantity.innerText = "Qty:"+""+(count++);
+        }else{
+            quantity.innerText = "Qty:"+""+(count);
         }
 
         let price = document.createElement("p");
@@ -77,11 +85,14 @@ document.body.onclick = function () {
     // Close Nav here
     closeNav();
     disBackground.style.display = "none";
+
 }
+
 function closeNav(e) {
     // e.stopPropagation();
     document.getElementById("mySidebar").style.width = "0";
     disBackground.style.display = "none";
+    
 }
 
 document.body.onclick = closeNav;

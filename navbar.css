@@ -159,6 +159,7 @@ body{
   }
 
   @media all and (min-width:300px) and (max-width:700px) {
+    /* NavBar */
     #navbar1{
       width: 100%;
       margin: auto;
@@ -182,7 +183,6 @@ body{
       margin-left: -5px;
       font-size: 12px;
     }
-  
 
     #navbar2{
       margin-top: 20px;
@@ -193,6 +193,70 @@ body{
       margin-bottom: 20px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
+
+    /* Footer */
+    #footer{
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      margin: auto;
+    }
+
+    #imgages{
+      display: flex;
+      flex-direction: column;
+    }
+
+    #imgages>i{
+      font-size: 5px;
+      margin-right: 2px;
+      margin-top: -25px
+    }
+
+    #footerDiv1{
+      /* width: 50%; */
+      display: flex;
+      flex-direction: column;
+      /* justify-content: space-evenly; */
+      gap: 0px;
+      /* margin-left: 20px; */
+      /* line-height: 20px; */
+    }
+
+    #footerDiv2{
+      margin-right: 200px;
+      font-family: 'Times New Roman', Times, serif;
+      color: #222222;
+      
+    }
+    
+    #footerDiv2>h2{
+      font-size: 10px;
+      font-weight: 100;
+    }
+
+    .DivTitle{
+      color: #606060;
+      font-size: 5px;
+      font-weight:800;
+    }
+    
+    .DivDropdown{
+      color: #606060;
+      font-size: 12px;
+      font-weight:600;
+    }
+
+    .lastDropdown{
+      display: flex;
+      flex-direction:column;
+      gap: 10px;
+      /* width: 50%; */
+      font-size: 5px;
+      color: #606060;
+    }
+    
+   
   }
 
 
